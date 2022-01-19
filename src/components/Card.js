@@ -71,7 +71,6 @@ const Card = ({ movie }) => {
           break;
       }
     }
-
     return genreArray.map((genre) => <li key={genre}>{genre}</li>);
   };
 
@@ -99,9 +98,10 @@ const Card = ({ movie }) => {
       <img
         src={
           movie.poster_path
-            ? "https://image.tmdb.org/t/p/w500/" + movie.poster_path
+            ? "https://image.tmdb.org/t/p/w500" + movie.poster_path
             : "./img/poster.jpg"
         }
+        alt="affiche film"
       />
       <h2>{movie.title}</h2>
       {movie.release_date ? (
@@ -120,7 +120,6 @@ const Card = ({ movie }) => {
               <li key={index}>{genre.name}</li>
             ))}
       </ul>
-
       {movie.overview ? <h3>Synopsis</h3> : ""}
       <p>{movie.overview}</p>
 

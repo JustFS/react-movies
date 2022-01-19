@@ -1,10 +1,10 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import Card from "./Card";
 
 const Form = () => {
-  const [search, setSearch] = useState("star");
   const [moviesData, setMoviesData] = useState([]);
+  const [search, setSearch] = useState("code");
   const [sortGoodBad, setSortGoodBad] = useState(null);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const Form = () => {
   return (
     <div className="form-component">
       <div className="form-container">
-        <form action="" onSubmit={(e) => e.preventDefault()}>
+        <form>
           <input
             type="text"
             placeholder="Entrez le titre d'un film"
@@ -30,22 +30,21 @@ const Form = () => {
 
         <div className="btn-sort-container">
           <div
-            onClick={() => setSortGoodBad("goodToBad")}
-            id="goodToBad"
             className="btn-sort"
+            id="goodToBad"
+            onClick={() => setSortGoodBad("goodToBad")}
           >
             Top<span>➜</span>
           </div>
           <div
-            onClick={() => setSortGoodBad("badToGood")}
-            id="badToGood"
             className="btn-sort"
+            id="badToGood"
+            onClick={() => setSortGoodBad("badToGood")}
           >
             Flop<span>➜</span>
           </div>
         </div>
       </div>
-
       <div className="result">
         {moviesData
           .slice(0, 12)
@@ -57,7 +56,7 @@ const Form = () => {
             }
           })
           .map((movie) => (
-            <Card movie={movie} key={movie.id} />
+            <Card key={movie.id} movie={movie} />
           ))}
       </div>
     </div>
