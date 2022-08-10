@@ -1,14 +1,14 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-import UserList from "./pages/UserList";
+import LikePage from "./pages/LikePage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/coup-de-coeur" element={<UserList />} />
+        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/coups-de-coeur" element={<LikePage />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </BrowserRouter>

@@ -1,10 +1,12 @@
-import axios from "axios";
-import React, { useEffect } from "react";
-import { useState } from "react/cjs/react.development";
-import Card from "../components/Card";
+import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import Header from "../components/Header";
+import axios from "axios";
+import Card from "../components/Card";
+import { cleanup } from "@testing-library/react";
 
-const UserList = () => {
+const LikePage = () => {
   const [listData, setListData] = useState([]);
 
   useEffect(() => {
@@ -25,7 +27,7 @@ const UserList = () => {
     <div className="user-list-page">
       <Header />
       <h2>
-        Coup de coeur <span>💖</span>
+        Coups de coeur <span>💖</span>
       </h2>
       <div className="result">
         {listData.length > 0 ? (
@@ -38,4 +40,4 @@ const UserList = () => {
   );
 };
 
-export default UserList;
+export default LikePage;

@@ -13,6 +13,8 @@
 
     ul {
       display: flex;
+      width: 180px;
+      justify-content: space-between;
 
       a {
         text-decoration: none;
@@ -21,6 +23,7 @@
         width: 102px;
         text-align: center;
         margin-right: 5px;
+        padding: 4px 8px;
 
         &:visited {
           text-decoration: none;

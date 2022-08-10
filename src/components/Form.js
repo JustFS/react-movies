@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from "react";
 import axios from "axios";
+import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
 import Card from "./Card";
 
 const Form = () => {
@@ -27,7 +29,6 @@ const Form = () => {
           />
           <input type="submit" value="Rechercher" />
         </form>
-
         <div className="btn-sort-container">
           <div
             className="btn-sort"
@@ -56,7 +57,7 @@ const Form = () => {
             }
           })
           .map((movie) => (
-            <Card key={movie.id} movie={movie} />
+            <Card movie={movie} key={movie.id} />
           ))}
       </div>
     </div>
